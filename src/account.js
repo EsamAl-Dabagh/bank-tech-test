@@ -7,6 +7,7 @@
 
   Account.prototype.addFunds = function(amount) {
     this._balance += amount;
+    this._statement.update("+", amount, this._balance);
   }
 
   Account.prototype.withdrawFunds = function(amount) {

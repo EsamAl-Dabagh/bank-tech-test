@@ -40,7 +40,7 @@ describe("Features", function() {
     var date = new Date();
     var today = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
 
-    expect(acc.viewStatement()).toContain(
+    expect(acc.viewStatement()).toMatch(
       `Date || Amount || Balance \n ${today} || +£500 || £500`
       );
   });

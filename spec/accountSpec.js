@@ -48,9 +48,11 @@ describe("Account", function () {
   describe("#viewStatement", function() {
     it("displays recent transactions", function() {
       account.addFunds(500);
+      var date = new Date();
+      var today = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
 
       expect(account.viewStatement()).toContain(
-        `Date || Amount || Balance \n ${today} || +£500 || £500`
+        `Date || Amount || Balance \n${today} || +£500 || £500`
         );
     });
   });
