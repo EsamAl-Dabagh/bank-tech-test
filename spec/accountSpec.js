@@ -1,22 +1,20 @@
 describe("Account", function () {
   var account;
 
+  function StatementMock() {}
+
+  StatementMock.prototype.update = function() {
+    return "update called";
+  }
+
+  StatementMock.prototype.view = function() {
+    var date = new Date();
+    var today = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
+    return `Date || Amount || Balance \n${today} || +£500 || £500`
+  }
+
   beforeEach(function () {
-
-    function StatementMock() {}
-
-    StatementMock.prototype.update = function() {
-      return "update called";
-    }
-
-    StatementMock.prototype.view = function() {
-      var date = new Date();
-      var today = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
-      return `Date || Amount || Balance \n${today} || +£500 || £500`
-    }
-
     account = new Account(StatementMock);
-
   });
 
   it("initializes with a balance of zero", function () {
@@ -65,9 +63,7 @@ describe("Account", function () {
       var date = new Date();
       var today = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
 
-      console.log(account._statement);
-
-      expect(account.viewStatement()).toMatch(
+      expect(account.viewStatement()).toEqual(
         `Date || Amount || Balance \n${today} || +£500 || £500`
         );
     });

@@ -40,8 +40,8 @@ describe("Features", function() {
     var date = new Date();
     var today = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
 
-    expect(acc.viewStatement()).toMatch(
-      `Date || Amount || Balance \n ${today} || +£500 || £500`
+    expect(acc.viewStatement()).toEqual(
+      `Date || Amount || Balance\n${today} || +£500 || £500`
       );
   });
 });

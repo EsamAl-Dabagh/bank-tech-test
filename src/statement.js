@@ -17,7 +17,7 @@
 
   Statement.prototype.view = function() {
     var transactionStrings = [];
-    var headers = "Date || Amount || Balance \n"
+    var headers = "Date || Amount || Balance\n"
 
     this._transactions.forEach(function(item) {
       transactionStrings.push(`${item.date} || ${item.type}£${item.amount} || £${item.balance}`)

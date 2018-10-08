@@ -45,13 +45,10 @@ describe("Statement", function () {
     it("will display transactions in a readable format", function() {
       var dateObj = new Date();
       var dateString = `${dateObj.getDate()}/${dateObj.getMonth()}/${dateObj.getFullYear()}` 
-      expect(statement.view()).toMatch(
-        `Date || Amount || Balance\n
-        ${dateString} || +£500 || £1000\n
-        ${dateString} || -£500 || £500`
-        );
+      var outputString = `Date || Amount || Balance\n${dateString} || +£500 || £1000\n${dateString} || -£500 || £500`
+      
+      expect(statement.view()).toEqual(outputString);
     });
   });
 
 });
-
