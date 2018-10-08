@@ -1,5 +1,14 @@
 # Bank
 
+### The Mission
+Create a bank account that a user can deposit funds to and withdraw funds from. The user should also be able to view a statement of their transactions. 
+
+### My Approach
+* Start by breaking down the requirements into [user stories](#User-Stories).
+* Highlight nouns and verbs in the user stories to build an idea of what classes and functions are required.
+  * For this I decided to separate the Account from the Statement. This would ensure single-responsibility for each class and maximum flexibility to change in the future, if need be. 
+* Create a domain model to visually represent the relationship between classes and functions. 
+
 ### User Stories
 
 ```
