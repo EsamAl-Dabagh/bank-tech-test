@@ -8,5 +8,9 @@
     this._balance += amount;
   }
 
+  Account.prototype.withdrawFunds = function(amount) {
+    this._balance -= amount;
+  }
+
   exports.Account = Account;
 })(this)
