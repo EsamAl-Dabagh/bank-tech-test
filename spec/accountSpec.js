@@ -8,6 +8,10 @@ describe("Account", function () {
   it("initializes with a balance of zero", function () {
     expect(account._balance).toEqual(0);
   });
+  
+  it("initializes with a new instance of Statement", function () {
+    expect(account._statement).toBeTruthy();
+  });
 
   describe("#addFunds", function() {
     it("increases the balance", function() {
@@ -39,5 +43,15 @@ describe("Account", function () {
 
       expect(account.showCurrentBalance()).toEqual("£500");
     }); 
+  });
+
+  describe("#viewStatement", function() {
+    it("displays recent transactions", function() {
+      account.addFunds(500);
+
+      expect(account.viewStatement()).toContain(
+        `Date || Amount || Balance \n ${today} || +£500 || £500`
+        );
+    });
   });
 });

@@ -1,7 +1,8 @@
 (function(exports) {
 
-  function Account() {
+  function Account(statement = Statement) {
     this._balance = 0;
+    this._statement = new statement();
   }
 
   Account.prototype.addFunds = function(amount) {
@@ -15,6 +16,10 @@
 
   Account.prototype.showCurrentBalance = function() {
     return `£${this._balance}`;
+  }
+
+  Account.prototype.viewStatement = function() {
+    return this._statement.view();
   }
 
   exports.Account = Account;
