@@ -13,6 +13,7 @@
   Account.prototype.withdrawFunds = function(amount) {
     if (this._balance - amount < 0) throw new Error("Insufficient funds");
     this._balance -= amount;
+    this._statement.update("-", amount, this._balance);
   }
 
   Account.prototype.showCurrentBalance = function() {

@@ -37,11 +37,12 @@ describe("Features", function() {
 
   it("display statement", function() {
     acc.addFunds(500);
+    acc.withdrawFunds(250);
     var date = new Date();
     var today = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
 
     expect(acc.viewStatement()).toEqual(
-      `Date || Amount || Balance\n${today} || +£500 || £500`
+      `Date || Amount || Balance\n${today} || +£500 || £500\n${today} || -£250 || £250`
       );
   });
 });
