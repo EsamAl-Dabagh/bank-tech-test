@@ -9,7 +9,10 @@
   }
 
   Account.prototype.withdrawFunds = function(amount) {
+    
+    if (this._balance - amount < 0) throw new Error("Insufficient funds");
     this._balance -= amount;
+
   }
 
   exports.Account = Account;

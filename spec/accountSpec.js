@@ -25,5 +25,11 @@ describe("Account", function () {
 
       expect(account._balance).toEqual(50);
     });
+
+    it("throws an error if insufficient funds", function() {
+      expect(function() { 
+        account.withdrawFunds(50) 
+      }).toThrow(new Error("Insufficient funds"));
+    });
   });
 });
