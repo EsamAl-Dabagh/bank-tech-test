@@ -32,4 +32,12 @@ describe("Account", function () {
       }).toThrow(new Error("Insufficient funds"));
     });
   });
+
+  describe("#showCurrentBalance", function() {
+    it("displays the current balance", function() {
+      account.addFunds(500);
+
+      expect(account.showCurrentBalance()).toEqual("£500");
+    }); 
+  });
 });

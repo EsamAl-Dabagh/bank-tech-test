@@ -28,4 +28,10 @@ describe("Features", function() {
       acc.withdrawFunds(10) 
     }).toThrow(new Error("Insufficient funds"));
   });
+
+  it("can display balance", function() {
+    acc.addFunds(500);
+
+    expect(acc.showCurrentBalance()).toEqual("£500");
+  });
 });
