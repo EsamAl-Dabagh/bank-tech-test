@@ -50,6 +50,34 @@ cd bank-tech-test
 
 Open `index.html` in your browser and open the dev-tools console.
 
+##### Create a new account:
+
+```
+var myAccount = new Account();
+```
+
+##### Deposit money into the account:
+  > ###### Takes an argument of amount
+```
+myAccount.deposit(500);
+```
+
+##### Check the balance:
+```
+myAccount.showCurrentBalance();
+```
+
+##### Withdraw money:
+> ###### Takes an argument of amount
+```
+myAccount.withdraw(250);
+```
+
+##### View statement:
+```
+myAccount.viewStatement();
+```
+
 ### Domain Model
 
 ### Testing
