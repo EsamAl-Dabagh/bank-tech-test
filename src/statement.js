@@ -20,7 +20,9 @@
     var headers = "Date || Amount || Balance\n"
 
     this._transactions.reverse().forEach(function (item) {
-      transactionStrings.push(`${item.date} || ${item.type}£${item.amount} || £${item.balance}`)
+      transactionStrings.push(
+        `${item.date} || ${item.type}£${item.amount.toFixed(2)} || £${item.balance.toFixed(2)}`
+        );
     });
 
     var statementString = headers + transactionStrings.join("\n");

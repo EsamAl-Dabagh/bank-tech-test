@@ -44,7 +44,7 @@ describe("Features", function() {
   it("can display balance", function() {
     acc.deposit(500);
 
-    expect(acc.showCurrentBalance()).toEqual("£500");
+    expect(acc.showCurrentBalance()).toEqual("£500.00");
   });
 
   it("display statement", function() {
@@ -54,7 +54,7 @@ describe("Features", function() {
     var today = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
 
     expect(acc.viewStatement()).toEqual(
-      `Date || Amount || Balance\n${today} || -£250 || £250\n${today} || +£500 || £500`
+      `Date || Amount || Balance\n${today} || -£250.00 || £250.00\n${today} || +£500.00 || £500.00`
       );
   });
 });

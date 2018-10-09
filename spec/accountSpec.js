@@ -10,7 +10,7 @@ describe("Account", function () {
   StatementMock.prototype.view = function () {
     var date = new Date();
     var today = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
-    return `Date || Amount || Balance \n${today} || +£500 || £500`
+    return `Date || Amount || Balance \n${today} || +£500.00 || £500.00`
   }
 
   beforeEach(function () {
@@ -66,7 +66,7 @@ describe("Account", function () {
     it("displays the current balance", function () {
       account.deposit(500);
 
-      expect(account.showCurrentBalance()).toEqual("£500");
+      expect(account.showCurrentBalance()).toEqual("£500.00");
     });
   });
 
@@ -77,7 +77,7 @@ describe("Account", function () {
       var today = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
 
       expect(account.viewStatement()).toEqual(
-        `Date || Amount || Balance \n${today} || +£500 || £500`
+        `Date || Amount || Balance \n${today} || +£500.00 || £500.00`
       );
     });
   });

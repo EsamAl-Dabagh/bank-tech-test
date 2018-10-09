@@ -19,7 +19,7 @@
   }
 
   Account.prototype.showCurrentBalance = function() {
-    return `£${this._balance}`;
+    return `£${this._balance.toFixed(2)}`;
   }
 
   Account.prototype.viewStatement = function() {

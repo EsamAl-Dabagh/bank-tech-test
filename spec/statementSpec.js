@@ -45,7 +45,7 @@ describe("Statement", function () {
     it("will display transactions in a readable format", function() {
       var dateObj = new Date();
       var dateString = `${dateObj.getDate()}/${dateObj.getMonth()}/${dateObj.getFullYear()}` 
-      var outputString = `Date || Amount || Balance\n${dateString} || -£500 || £500\n${dateString} || +£500 || £1000`
+      var outputString = `Date || Amount || Balance\n${dateString} || -£500.00 || £500.00\n${dateString} || +£500.00 || £1000.00`
       
       expect(statement.view()).toEqual(outputString);
     });
