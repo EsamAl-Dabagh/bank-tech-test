@@ -6,7 +6,7 @@ Create a bank account that a user can deposit funds to and withdraw funds from. 
 ### My Approach
 * Start by breaking down the requirements into [user stories](#User-Stories).
 * Highlight nouns and verbs in the user stories to build an idea of what classes and functions are required.
-  * For this I decided to separate the Account from the Statement. This would ensure single-responsibility for each class and maximum flexibility to change in the future, if need be. 
+  * For this I decided to separate the Account class from the Statement class. This would ensure single-responsibility for each class and maximum flexibility to change in the future, if need be. 
 * Create a domain model to visually represent the relationship between classes and functions. 
 
 ### User Stories
@@ -40,3 +40,19 @@ As a customer
 So I can keep track of my spending
 I want to be able to see a statement of recent transactions
 ```
+
+### How To Use
+
+```
+git clone https://github.com/EsamAl-Dabagh/bank-tech-test.git
+cd bank-tech-test
+```
+
+Open `index.html` in your browser and open the dev-tools console.
+
+### Domain Model
+
+### Testing
+
+Test-driven using Jasmine.
+  * To run tests open `SpecRunner.html` in your browser.
