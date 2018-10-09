@@ -53,13 +53,16 @@ describe("Account", function () {
         account.withdrawFunds(50)
       }).toThrow(new Error("Insufficient funds"));
     });
+
+    it("checks if withdrawFunds amount is greater than 0", function () {
+      expect(function () {
+        account.withdrawFunds(0);
+      }).toThrow(new Error("Please enter something greater than 0"));
+    });
+
   });
 
-  it("checks if withdrawFunds amount is greater than 0", function () {
-    expect(function () {
-      account.withdrawFunds(0);
-    }).toThrow(new Error("Please enter something greater than 0"));
-  });
+  
 
   describe("#showCurrentBalance", function () {
     it("displays the current balance", function () {
