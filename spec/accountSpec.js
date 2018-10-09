@@ -25,9 +25,9 @@ describe("Account", function () {
     expect(account._statement).toBeTruthy();
   });
 
-  describe("#addFunds", function() {
+  describe("#deposit", function() {
     it("increases the balance", function() {
-      account.addFunds(100);
+      account.deposit(100);
 
       expect(account._balance).toEqual(100);
     });
@@ -36,7 +36,7 @@ describe("Account", function () {
   describe("#withdrawFunds", function() {
 
     it("decreases the balance", function() {
-      account.addFunds(100);
+      account.deposit(100);
       account.withdrawFunds(50);
 
       expect(account._balance).toEqual(50);
@@ -51,7 +51,7 @@ describe("Account", function () {
 
   describe("#showCurrentBalance", function() {
     it("displays the current balance", function() {
-      account.addFunds(500);
+      account.deposit(500);
 
       expect(account.showCurrentBalance()).toEqual("£500");
     }); 
@@ -59,7 +59,7 @@ describe("Account", function () {
 
   describe("#viewStatement", function() {
     it("displays recent transactions", function() {
-      account.addFunds(500);
+      account.deposit(500);
       var date = new Date();
       var today = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
 

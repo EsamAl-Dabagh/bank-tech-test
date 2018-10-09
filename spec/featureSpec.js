@@ -11,13 +11,13 @@ describe("Features", function() {
   });
 
   it("can add funds into account", function() {
-    acc.addFunds(10);
+    acc.deposit(10);
 
     expect(acc._balance).toEqual(10);
   });
 
   it("can withdraw funds from account", function() {
-    acc.addFunds(10);
+    acc.deposit(10);
     acc.withdrawFunds(5);
 
     expect(acc._balance).toEqual(5);
@@ -30,13 +30,13 @@ describe("Features", function() {
   });
 
   it("can display balance", function() {
-    acc.addFunds(500);
+    acc.deposit(500);
 
     expect(acc.showCurrentBalance()).toEqual("£500");
   });
 
   it("display statement", function() {
-    acc.addFunds(500);
+    acc.deposit(500);
     acc.withdrawFunds(250);
     var date = new Date();
     var today = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`

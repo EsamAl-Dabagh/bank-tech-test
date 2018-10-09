@@ -5,7 +5,7 @@
     this._statement = new statement();
   }
 
-  Account.prototype.addFunds = function(amount) {
+  Account.prototype.deposit = function(amount) {
     this._balance += amount;
     this._statement.update("+", amount, this._balance);
   }
