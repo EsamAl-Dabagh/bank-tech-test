@@ -29,6 +29,18 @@ describe("Features", function() {
     }).toThrow(new Error("Insufficient funds"));
   });
 
+  it("checks deposit amount is greater than 0", function() {
+    expect(function() {
+      acc.deposit(-5)
+    }).toThrow(new Error("Please enter something greater than 0"));
+  });
+  
+  it("checks withdraw amount is greater than 0", function() {
+    expect(function() {
+      acc.withdrawFunds(-5)
+    }).toThrow(new Error("Please enter something greater than 0"));
+  });
+
   it("can display balance", function() {
     acc.deposit(500);
 
