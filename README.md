@@ -80,6 +80,23 @@ myAccount.viewStatement();
 
 ### Domain Model
 
+```
+╔════════════════════════╗                
+║ ACCOUNT - constructor  ║                ╔══════════════════════════╗
+║ ._balance              ║                ║ Statement - constructor  ║
+║ ._statement            ║                ║ ._transactions           ║
+╚════════════════════════╝                ╚══════════════════════════╝      
+    |  |                                        |   |
+╔══════════════════════╗                  ╔════════════════════════╗
+║ ACCOUNT - prototype  ║                  ║ Statement - prototype  ║
+║ .deposit()           ║----------------->║ .update()              ║
+║ .withdrawFunds()     ║                  ║                        ║
+║ .viewStatement()     ║----------------->║ .view()                ║
+║ ._checkFunds()       ║                  ╚════════════════════════╝
+║ ._isValid()          ║
+╚══════════════════════╝
+```
+
 ### Testing
 
 Test-driven using Jasmine.

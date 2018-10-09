@@ -62,8 +62,6 @@ describe("Account", function () {
 
   });
 
-  
-
   describe("#showCurrentBalance", function () {
     it("displays the current balance", function () {
       account.deposit(500);
