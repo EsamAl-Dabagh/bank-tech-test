@@ -54,7 +54,7 @@ describe("Features", function() {
     var today = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
 
     expect(acc.viewStatement()).toEqual(
-      `Date || Amount || Balance\n${today} || +£500 || £500\n${today} || -£250 || £250`
+      `Date || Amount || Balance\n${today} || -£250 || £250\n${today} || +£500 || £500`
       );
   });
 });

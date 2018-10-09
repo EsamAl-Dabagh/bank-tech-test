@@ -19,7 +19,7 @@
     var transactionStrings = [];
     var headers = "Date || Amount || Balance\n"
 
-    this._transactions.forEach(function(item) {
+    this._transactions.reverse().forEach(function(item) {
       transactionStrings.push(`${item.date} || ${item.type}£${item.amount} || £${item.balance}`)
     });
 
