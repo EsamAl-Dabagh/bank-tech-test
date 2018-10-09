@@ -8,7 +8,7 @@ Create a bank account that a user can deposit funds into and withdraw funds from
 * Highlight nouns and verbs in the user stories to build an idea of what classes and functions are required.
   * For this I decided to separate the Account class from the Statement class. This would ensure single-responsibility for each class and maximum flexibility to change in the future, if need be.
     * Statement is passed into the Account constructor as a default argument. This allows for flexibility without adding an extra step in for the user. 
-    * An instance of Statement is then used as a private variable which allows functions in Account's prototype to call functions defined on Stateement's prototype. 
+    * An instance of Statement is then used as a private variable which allows functions in Account's prototype to call functions defined on Statement's prototype. 
 * Create a [domain model](#domain-model) to visually represent the relationship between classes and functions. 
 
 ### User Stories
