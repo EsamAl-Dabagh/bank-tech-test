@@ -18,18 +18,18 @@ describe("Account", function () {
   });
 
   it("initializes with a balance of zero", function () {
-    expect(account._balance).toEqual(0);
+    expect(account.showCurrentBalance()).toEqual("£0.00");
   });
 
   it("initializes with a new instance of Statement", function () {
-    expect(account._statement).toBeTruthy();
+    expect(account.viewStatement()).toBeDefined();
   });
 
   describe("#deposit", function () {
     it("increases the balance", function () {
       account.deposit(100);
 
-      expect(account._balance).toEqual(100);
+      expect(account.showCurrentBalance()).toEqual("£100.00");
     });
 
     it("checks if deposit amount is greater than 0", function () {
@@ -45,7 +45,7 @@ describe("Account", function () {
       account.deposit(100);
       account.withdrawFunds(50);
 
-      expect(account._balance).toEqual(50);
+      expect(account.showCurrentBalance()).toEqual("£50.00");
     });
 
     it("throws an error if insufficient funds", function () {

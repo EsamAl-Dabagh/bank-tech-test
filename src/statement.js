@@ -31,5 +31,9 @@
 
   }
 
+  Statement.prototype.returnTransactions = function () {
+    return this._transactions;
+  }
+
   exports.Statement = Statement;
 })(this)

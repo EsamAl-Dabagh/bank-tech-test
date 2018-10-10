@@ -7,20 +7,20 @@ describe("Features", function () {
   })
 
   it("has a balance", function () {
-    expect(acc._balance).toEqual(0);
+    expect(acc.showCurrentBalance()).toEqual("£0.00");
   });
 
   it("can add funds into account", function () {
     acc.deposit(10);
 
-    expect(acc._balance).toEqual(10);
+    expect(acc.showCurrentBalance()).toEqual("£10.00");
   });
 
   it("can withdraw funds from account", function () {
     acc.deposit(10);
     acc.withdrawFunds(5);
 
-    expect(acc._balance).toEqual(5);
+    expect(acc.showCurrentBalance()).toEqual("£5.00");
   });
 
   it("does not let customer withdraw funds they do not have", function () {

@@ -7,7 +7,7 @@ describe("Statement", function () {
   });
 
   it("initializes with empty transactions array", function () {
-    expect(statement._transactions).toEqual([]);
+    expect(statement.returnTransactions()).toEqual([]);
   });
 
   describe("#update", function () {
@@ -18,22 +18,28 @@ describe("Statement", function () {
       });
 
       it("increases transactions array by 1", function () {
-        expect(statement._transactions.length).toEqual(1);
+        expect(statement.returnTransactions().length).toEqual(1);
       });
 
       it("adds amount of transaction", function () {
-        expect(statement._transactions[0].amount).toEqual(500);
+        expect(statement.returnTransactions()[0].amount).toEqual(500);
       });
 
       it("adds type of transaction", function () {
-        expect(statement._transactions[0].type).toEqual("+");
+        expect(statement.returnTransactions()[0].type).toEqual("+");
       });
 
       it("adds balance of transaction", function () {
-        expect(statement._transactions[0].balance).toEqual(1000);
+        expect(statement.returnTransactions()[0].balance).toEqual(1000);
       });
     });
 
+  });
+
+  describe("#returnTransactions", function() {
+    it("returns the transactions array", function() {
+      expect(statement.returnTransactions()).toEqual([]);
+    });
   });
 
   describe("#view", function() {
