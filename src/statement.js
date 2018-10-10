@@ -4,12 +4,11 @@
     this._transactions = [];
   }
 
-  Statement.prototype.update = function (type, amount, balance) {
+  Statement.prototype.update = function (amount, balance) {
     var dateObj = new Date();
     var dateString = `${dateObj.getDate()}/${dateObj.getMonth()}/${dateObj.getFullYear()}`
     this._transactions.push({
       date: dateString,
-      type: type,
       amount: amount,
       balance: balance
     });
@@ -17,12 +16,20 @@
 
   Statement.prototype.view = function () {
     var transactionStrings = [];
-    var headers = "Date || Amount || Balance\n"
+    var headers = "Date || Credit || Debit || Balance\n"
 
     this._transactions.reverse().forEach(function (item) {
-      transactionStrings.push(
-        `${item.date} || ${item.type}£${item.amount.toFixed(2)} || £${item.balance.toFixed(2)}`
-      );
+
+      if (item.amount < 0) {
+        transactionStrings.push(
+          `${item.date} || || £${Math.abs(item.amount).toFixed(2)} || £${item.balance.toFixed(2)}`
+        );
+      } else {
+        transactionStrings.push(
+          `${item.date} || £${item.amount.toFixed(2)} || || £${item.balance.toFixed(2)}`
+        );
+      }
+      
     });
 
     var statementString = headers + transactionStrings.join("\n");
