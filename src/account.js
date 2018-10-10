@@ -3,19 +3,21 @@
   function Account(statement = Statement) {
     this._balance = 0;
     this._statement = new statement();
+    this.DEPOSIT = "+";
+    this.WITHDRAWAL = "-";
   }
 
   Account.prototype.deposit = function (amount) {
     this._isValid(amount);
     this._balance += amount;
-    this._statement.update("+", amount, this._balance);
+    this._statement.update(this.DEPOSIT, amount, this._balance);
   }
 
   Account.prototype.withdrawFunds = function (amount) {
     this._isValid(amount);
     this._checkFunds(amount);
     this._balance -= amount;
-    this._statement.update("-", amount, this._balance);
+    this._statement.update(this.WITHDRAWAL, amount, this._balance);
   }
 
   Account.prototype.showCurrentBalance = function () {

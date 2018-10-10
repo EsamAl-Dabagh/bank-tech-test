@@ -1,20 +1,15 @@
 describe("Account", function () {
   var account;
 
-  function StatementMock() {}
-
-  StatementMock.prototype.update = function () {
-    return "update called";
-  }
-
-  StatementMock.prototype.view = function () {
-    var date = new Date();
-    var today = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
-    return `Date || Amount || Balance \n${today} || +£500.00 || £500.00`
-  }
-
   beforeEach(function () {
-    account = new Account(StatementMock);
+
+    account = new Account();
+
+    var date = new Date();
+    var today = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`;
+    var dateString = `Date || Amount || Balance \n${today} || +£500.00 || £500.00`;
+    spyOn(account, "viewStatement").and.returnValue(dateString);
+    
   });
 
   it("initializes with a balance of zero", function () {
